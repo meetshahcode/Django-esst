@@ -2,13 +2,24 @@ from django.shortcuts import render
 from .models import Note
 from .forms import NoteForm
 from django.http import Http404
-from django.views.generic import ListView,DetailView,CreateView
+from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
+
+
 # Create your views here.
 
 
+class NoteDeleteView(DeleteView):
+    model = Note
+    success_url = "/smart/list"
+
+
+class NoteUpdateView(UpdateView):
+    model = Note
+    success_url = "/smart/list"
+    form_class = NoteForm
+
 class NoteCreateView(CreateView):
     model = Note
-    fields = ["Title","notes"]
     success_url = "/smart/list"
     form_class = NoteForm
 
