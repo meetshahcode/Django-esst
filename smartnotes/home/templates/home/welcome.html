@@ -1,3 +1,15 @@
-<h1>Welcome to Smart notes</h1>
 
-<h3>Today is {{ today }} </h3>
+
+
+
+{% extends 'base.html' %}
+{% load static  %}
+
+{% block content %}
+    <h1>Welcome to Smart notes</h1>
+
+    <h3>Today is {{ today }} </h3>
+    <a href="{% url 'notes.list' %}" role="button" class="btn btn-primary btn-floating">
+      Checkout thease smart notes
+    </a>
+{% endblock content %}

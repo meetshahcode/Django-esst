@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<h1 class="my-5 ">List of notes </h1>
+    <div class="row row-cols3 g-2">
+        {% for note in Notes.all  %}
+        <div class="col">
+            <div class="p-3 border">
+                <a href="{% url 'notes.detail' pk=note.id %}" class="text-dark text-decoration-non"><h3>{{note.Title}}</h3></a>
+                {{note.notes|truncatechars:10}}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
+    
