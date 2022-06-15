@@ -9,6 +9,7 @@ from django.contrib.auth.views import LoginView,LogoutView
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import CreateView
 from django.shortcuts import redirect
+
 class SignupView(CreateView):
     form_class = UserCreationForm
     template_name = "home/register.html"
