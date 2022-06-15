@@ -5,7 +5,8 @@
     <form style="text-align: left;margin: 0;auto;width: 100%;" method="post">
         {% csrf_token %}
         {{form.as_p}}
-        <input type="submit" class="btn btn-secondary"  >
+        <input type="submit" class="btn btn-primary"  >
+        <a href="{% url 'home' %}" role="button" class="btn btn-secondary">Home</a>
     </form>
 {% endblock content %}
     

@@ -6,10 +6,19 @@
 {% load static  %}
 
 {% block content %}
-    <h1>Welcome to Smart notes</h1>
+    <h1>Welcome {{user}} to Smart notes</h1>
 
     <h3>Today is {{ today }} </h3>
+    
+    {% if user.is_authenticated %}
     <a href="{% url 'notes.list' %}" role="button" class="btn btn-primary btn-floating">
-      Checkout thease smart notes
+      Checkout your smart notes
     </a>
+    {% endif %}
+      
+    
+    {% block logout %}
+      
+    {% endblock logout %}
+      
 {% endblock content %}
